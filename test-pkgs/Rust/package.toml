@@ -1,0 +1,110 @@
+name = "Rust"
+layer = "programming-languages"
+on_install = { before = "install-rustup" }
+requires = ["curl"]
+
+[[packages]]
+name = "rustfmt"
+installer = "rustup"
+priority = "Highest"
+
+[[packages]]
+name = "rust-src"
+installer = "rustup"
+
+[[packages]]
+name = "clippy-preview"
+installer = "rustup"
+
+[[packages]]
+name = "rls"
+installer = "rustup"
+
+[[packages]]
+name = "audit"
+installer = "cargo"
+
+[[packages]]
+name = "cache"
+installer = "cargo"
+
+[[packages]]
+name = "count"
+installer = "cargo"
+
+[[packages]]
+name = "deps"
+installer = "cargo"
+
+[[packages]]
+name = "edit"
+installer = "cargo"
+
+[[packages]]
+name = "generate"
+installer = "cargo"
+
+[[packages]]
+name = "info"
+installer = "cargo"
+
+[[packages]]
+name = "make"
+installer = "cargo"
+
+[[packages]]
+name = "modules"
+installer = "cargo"
+
+[[packages]]
+name = "outdated"
+installer = "cargo"
+
+[[packages]]
+name = "release"
+installer = "cargo"
+
+[[packages]]
+name = "testify"
+installer = "cargo"
+
+[[packages]]
+name = "udeps"
+installer = "cargo"
+
+[[packages]]
+name = "watch"
+installer = "cargo"
+
+[[packages]]
+name = "bottom"
+installer = "cargo"
+
+[[packages]]
+name = "du-dust"
+installer = "cargo"
+
+[[packages]]
+name = "fselect"
+installer = "cargo"
+
+[[packages]]
+name = "mdbook"
+installer = "cargo"
+
+[[packages]]
+name = "nu"
+additional_arguments = ["--all-features"]
+installer = "cargo"
+
+[[packages]]
+name = "sd"
+installer = "cargo"
+
+[[packages]]
+name = "skim"
+installer = "cargo"
+
+[[packages]]
+name = "xsv"
+installer = "cargo"

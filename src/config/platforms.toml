@@ -1,0 +1,12 @@
+[macos]
+name = "macOS"
+system_installer = "homebrew"
+app_installer = "homebrew-apps"
+
+[linux]
+name = "Linux"
+determine_installer = "which-linux"
+
+[windows]
+name = "Windows"
+system_installer = "scoop"

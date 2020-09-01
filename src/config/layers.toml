@@ -1,0 +1,23 @@
+[[layers]]
+name = "bootstrap"
+
+[[layers]]
+name = "system"
+sub_layers = ["package-managers", "shell", "fonts", "secure-tools", "utilities"]
+
+[[layers]]
+name = "development"
+sub_layers = ["tools", "programming-languages", "ide"]
+
+[[layers]]
+name = "productivity"
+sub_layers = ["browser", "office", "communication"]
+
+[[layers]]
+name = "music"
+
+[[layers]]
+name = "work"
+
+[[layers]]
+name = "games"

@@ -1,0 +1,88 @@
+[apt]
+name = "Apt"
+platforms = ["linux-debian", "linux"]
+command = "apt-get"
+install_arguments = ["install", "--assume-yes", "{}"]
+update_arguments = ["upgrade", "--assume-yes", "{}"]
+delete_arguments = ["uninstall", "--assume-yes", "{}"]
+
+[yum]
+name = "Yum"
+platforms = ["linux-redhat"]
+command = "yum"
+install_arguments = ["install", "--assume-yes", "{}"]
+update_arguments = ["upgrade", "--assume-yes", "{}"]
+delete_arguments = ["uninstall", "--assume-yes", "{}"]
+
+[snap]
+name = "Snap"
+platforms = ["linux"]
+app_command = "snap"
+install_arguments = ["install", "{}"]
+update_arguments = ["update", "{}"]
+delete_arguments = ["uninstall", "{}"]
+
+[homebrew]
+name = "Homebrew"
+platforms = ["macos"]
+bootstrap = "/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)\""
+command = "brew"
+app_command = "brew cask"
+install_arguments = ["install", "{}"]
+update_arguments = ["upgrade", "{}"]
+delete_arguments = ["uninstall", "{}"]
+update_self_arguments = ["update"]
+requires = ["curl"]
+
+[homebrew-apps]
+name = "Homebrew Casks"
+platforms = ["macos"]
+command = "brew"
+install_arguments = ["cask", "install", "{}"]
+update_arguments = ["cask", "upgrade", "{}"]
+delete_arguments = ["cask", "uninstall", "{}"]
+update_self_arguments = ["update"]
+requires = ["curl"]
+
+[scoop]
+name = "Scoop.sh"
+platforms = ["windows"]
+bootstrap = "iwr -useb get.scoop.sh | iex"
+command = "scoop"
+install_arguments = ["install", "{}"]
+update_arguments = ["update", "{}"]
+delete_arguments = ["uninstall", "{}"]
+requires = ["pwsh.exe"]
+
+[cargo]
+name = "Cargo"
+command = "cargo"
+install_arguments = ["install", "{}"]
+update_arguments = ["update", "{}"]
+delete_arguments = ["uninstall", "{}"]
+requires = ["rustup"]
+
+[rustup]
+name = "rustup"
+bootstrap = "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -v -y"
+command = "rustup"
+install_arguments = ["component", "add", "{}"]
+update_arguments = ["update"]
+delete_arguments = ["component", "remove", "{}"]
+update_self_arguments = ["self", "update"]
+requires = ["curl"]
+
+[raco]
+name = "Racket"
+command = "raco"
+install_arguments = ["pkg", "install", "--deps", "search-auto", "{}"]
+update_arguments = ["pkg", "update", "--deps", "search-auto", "{}"]
+delete_arguments = ["pkg", "uninstall", "--deps", "search-auto", "{}"]
+
+[conda]
+name = "Python-Anaconda"
+command = "conda"
+bootstrap = "anaconda_installer"
+install_arguments = ["install", "--yes", "{}"]
+update_arguments = ["update", "--yes", "{}"]
+delete_arguments = ["uninstall", "--yes", "{}"]
