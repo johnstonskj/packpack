@@ -55,5 +55,3 @@ elif [[ $OSSYS = linux ]] ; then
     fi
   fi
 fi
-
-echo "$INSTALLER | $APP_INSTALLER"
